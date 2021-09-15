@@ -1,10 +1,19 @@
-// challenges:
-// - what's the difference between mock, stub and spy
-// - lib mocks
-// - spyOn, jest,fn(), jest.mock(), manual mock, mockImplementation()
+const index = require("../src/index");
 
 describe("Index", () => {
-  it("should call config on dotenv", () => {});
+  it.only("should call config on dotenv", () => {
+    // mockar config e ver se ela foi chamada
+    jest.mock("dotenv", () => {
+      config: jest.fn();
+    });
+
+    index;
+
+    // mockar usando o manual mocks __mocks__/
+
+    // mock o process .env
+  });
+
   it("should exit the node process with code 1 when no PORT env var is found", () => {});
   it("should parse PORT process.env to number", () => {});
   it("should instantiate express into app variable", () => {});
